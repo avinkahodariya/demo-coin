@@ -7,7 +7,7 @@ const PORT = 4000
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-export async function getCoinMasterCodes() {
+ async function getCoinMasterCodes() {
     try {
       const { data } = await axios.get('https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette'); // Official Facebook page
       const $ = cheerio.load(data);
@@ -31,8 +31,8 @@ export async function getCoinMasterCodes() {
 
 
 app.get('/home', async(req, res) => {
-    // const codes = await getCoinMasterCodes()
-  res.status(200).json({ codes: [] });
+    const codes = await getCoinMasterCodes()
+  res.status(200).json({ codes: codes });
 })
 
 
