@@ -31,8 +31,8 @@ export async function getCoinMasterCodes() {
 
 
 app.get('/home', async(req, res) => {
-    const codes= await getCoinMasterCodes()
-  res.status(200).json({ codes });
+    // const codes = await getCoinMasterCodes()
+  res.status(200).json({ codes: [] });
 })
 
 
