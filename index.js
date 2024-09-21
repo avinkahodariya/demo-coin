@@ -11,7 +11,8 @@ export async function getCoinMasterCodes() {
     try {
       const { data } = await axios.get('https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette'); // Official Facebook page
       const $ = cheerio.load(data);
-  
+      let codes = [];  // Initialize the codes array
+
       // This is a placeholder. You must modify it to extract actual spin links from the page.
       $('a').each((i, elem) => {
         const href = $(elem).attr('href');
