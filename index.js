@@ -7,8 +7,8 @@ const PORT = 4000
 const axios = require('axios');
 const cheerio = require('cheerio');
 
-// const path = "https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette"
-const path = "https://apkintel.com/"
+const path = "https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette"
+// const path = "https://apkintel.com/"
 
  async function getCoinMasterCodes() {
     try {
@@ -20,7 +20,6 @@ const path = "https://apkintel.com/"
       $('a').each((i, elem) => {
         const href = $(elem).attr('href');
         if (href && href.includes('coinmaster')) {
-          console.log("🚀 ~ file: server.js:23 ~ $ ~ href:", href)
           codes.push(href); // You should refine the filter based on actual links structure
         }
       });
