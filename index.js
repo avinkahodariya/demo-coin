@@ -7,9 +7,12 @@ const PORT = 4000
 const axios = require('axios');
 const cheerio = require('cheerio');
 
+// const path = "https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette"
+const path = "https://apkintel.com/"
+
  async function getCoinMasterCodes() {
     try {
-      const { data } = await axios.get('https://www.theroaringman.com/claim-your-free-spins-in-coin-master/#google_vignette'); // Official Facebook page
+      const { data } = await axios.get(path); // Official Facebook page
       const $ = cheerio.load(data);
       let codes = [];  // Initialize the codes array
 
